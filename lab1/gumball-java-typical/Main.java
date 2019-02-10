@@ -31,9 +31,7 @@ public class Main {
 		gumballMachine2.insertCoin( 25 );
 		gumballMachine2.turnCrank();
 		gumballMachine2.turnCrank();
-
-
-		System.out.println(gumballMachine);
+		
 
 		// Gumball Machine Type 3
 		GumballMachine gumballMachine3 = new GumballMachine(5, 3);
