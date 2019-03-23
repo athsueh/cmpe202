@@ -57,11 +57,6 @@ public class BuildOrder {
         customBurger.addChild( bu );
         customBurger.addChild( si );
 
-
-        //bun
-        //sides
-
-
         // Add Custom Burger to the Order
         order.addChild( customBurger );
 
@@ -113,8 +108,7 @@ public class BuildOrder {
 
 
 
-
-        // Add Custom Burger to the Order
+        // Add Custom Burger 2 to the Order
         order.addChild( customBurger2 );
 
         return order ;
