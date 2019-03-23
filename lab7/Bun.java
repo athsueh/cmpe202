@@ -1,22 +1,22 @@
-public class Burger extends LeafDecorator
+public class Bun extends LeafDecorator
 {
     private String[] options ;
-    
-    
-    public Burger( String d )
+
+
+    public Bun(String d )
     {
         super(d) ;
     }
     
+    // premium cheese +1.50
     public void setOptions( String[] options )
     {
         this.options = options ;
         for ( int i = 0; i<options.length; i++ )
         {
-            if ( "1/3lb.".equals(options[i]) ) this.price += 9.50 ;
-            if ( "2/3lb.".equals(options[i]) ) this.price += 11.50 ;
-            if ( "1lb.".equals(options[i]) ) this.price += 15.50 ;
-            if ( "In A Bowl".equals(options[i]) ) this.price += 1.50 ;
+            if ( "Gluten-Free Bun".equals(options[i]) ) this.price += 1.00 ;
+            if ( "Hawaiian Bun".equals(options[i]) ) this.price += 1.00 ;
+            if ( "Pretzel Bun".equals(options[i]) ) this.price += 0.50 ;
         }
     }
     
