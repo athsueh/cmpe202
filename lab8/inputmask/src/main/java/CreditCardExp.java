@@ -5,6 +5,11 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 
 	private IKeyEventHandler nextHandler ;
 	private String date = "" ;
+	private ExpDecorator decorator = null;
+
+	public void wrapDecorator(ExpDecorator n){
+		this.decorator = n;
+	}
 
     public void setNext( IKeyEventHandler next) {
     	this.nextHandler = next ;
@@ -14,12 +19,15 @@ public class CreditCardExp implements IDisplayComponent, IKeyEventHandler
 		if ( date.equals("") )
 			return "[MM/YY]" + "  " ;
 		else
-			return "[" + date + "]" + "  " ;
+			return "[" + decorator.display(date) + "]" + "  " ;
 	}	
 
 	public void key(String ch, int cnt) {
 		if ( cnt >= 17 && cnt <= 20  )
-			date += ch ;
+			if(ch.equals("X") || ch.equals("x") || ch.equals("Delete"))
+				date = date.substring(0,date.length()-1);
+			else
+				date += ch ;
 		else if ( nextHandler != null )
 			nextHandler.key(ch, cnt) ;
 	}	

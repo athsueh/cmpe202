@@ -18,6 +18,9 @@ public class App {
         exp = new CreditCardExp();
         cvc = new CreditCardCVC();
 
+        num.wrapDecorator(new NumDecorator());
+        exp.wrapDecorator(new ExpDecorator());
+
         screen.addSubComponent(num);
         screen.addSubComponent(exp);
         screen.addSubComponent(cvc);
@@ -39,8 +42,15 @@ public class App {
     }
 
     public void key(String ch) {
-        count++;
-        screen.key(ch, count);
+        if ((ch.equals("X") || ch.equals("x") ||
+                ch.equals("Delete")) && count > 0){
+            count--;
+            screen.key(ch, count);
+        }
+        else if (ch.matches("[0-9]+") && count < 23){
+            count++;
+            screen.key(ch, count);
+        }
     }
 
 }
