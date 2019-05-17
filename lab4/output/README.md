@@ -1,7 +1,7 @@
-#Lab 4: Din Tai Fung Design Patterns
+# Lab 4: Din Tai Fung Design Patterns
 
 
-##Class Customer
+## Class Customer
 
 The basic responsibility of a Customer object is to provide information about a party, as well as confirm/leave from the waitlist
 
@@ -16,7 +16,7 @@ Step 1: LineHandler
 Step 2: LineHandler
 
 
-##Class LineHandler
+## Class LineHandler
 
 The basic responsibility of a LineHandler object is to take in customer wait list requests, and manage the waitlist line. It must also communicate with the TableManager to know when a free table is available.
 
@@ -52,7 +52,7 @@ Step 2: LineHandler, Table
 Step 3: Table
 
 
-##Class Table 
+## Class Table 
 
 The basic responsibility of a Table object is to maintain information about a single table.
 
